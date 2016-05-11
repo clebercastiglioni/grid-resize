@@ -1,0 +1,146 @@
+.uk-contrast {
+	color: #fff; }
+	.uk-contrast a:not([class]),
+	.uk-contrast .uk-link {
+		color: fade(#fff, 70%);
+		text-decoration: none; }
+	.uk-contrast a:not([class]):hover,
+	.uk-contrast .uk-link:hover {
+		color: #fff;
+		text-decoration: underline; }
+	.uk-contrast *:not(pre) > code,
+	.uk-contrast *:not(pre) > kbd,
+	.uk-contrast *:not(pre) > samp {
+		color: #fff; }
+	.uk-contrast em {
+		color: #fff; }
+	.uk-contrast hr {
+		border-top-color: fade(#fff, 20%); }
+	.uk-contrast .uk-nav li > a,
+	.uk-contrast .uk-nav li > a:hover {
+		text-decoration: none; }
+	.uk-contrast .uk-nav-side > li > a {
+		color: #fff; }
+	.uk-contrast .uk-nav-side > li > a:hover,
+	.uk-contrast .uk-nav-side > li > a:focus {
+		background: fade(#fff, 10%);
+		color: #fff; }
+	.uk-contrast .uk-nav-side > li.uk-active > a {
+		background: #fff;
+		color: #444; }
+	.uk-contrast .uk-nav-side .uk-nav-header {
+		color: #fff; }
+	.uk-contrast .uk-nav-side .uk-nav-divider {
+		border-top-color: fade(#fff, 20%); }
+	.uk-contrast .uk-nav-side ul a {
+		color: fade(#fff, 70%); }
+	.uk-contrast .uk-nav-side ul a:hover {
+		color: #fff; }
+	.uk-contrast .uk-subnav > * > a {
+		color: fade(#fff, 70%);
+		text-decoration: none; }
+	.uk-contrast .uk-subnav > * > a:hover,
+	.uk-contrast .uk-subnav > * > a:focus {
+		color: #fff;
+		text-decoration: none; }
+	.uk-contrast .uk-subnav > .uk-active > a {
+		color: #fff; }
+	.uk-contrast .uk-subnav-line > :nth-child(n+2):before {
+		border-left-color: fade(#fff, 20%); }
+	.uk-contrast .uk-subnav-pill > * > a:hover,
+	.uk-contrast .uk-subnav-pill > * > a:focus {
+		background: fade(#fff, 70%);
+		color: #444;
+		text-decoration: none; }
+	.uk-contrast .uk-subnav-pill > .uk-active > a {
+		background: #fff;
+		color: #444; }
+	.uk-contrast .uk-list-line > li:nth-child(n+2) {
+		border-top-color: fade(#fff, 20%); }
+	.uk-contrast .uk-form select,
+	.uk-contrast .uk-form textarea,
+	.uk-contrast .uk-form input:not([type]),
+	.uk-contrast .uk-form input[type="text"],
+	.uk-contrast .uk-form input[type="password"],
+	.uk-contrast .uk-form input[type="datetime"],
+	.uk-contrast .uk-form input[type="datetime-local"],
+	.uk-contrast .uk-form input[type="date"],
+	.uk-contrast .uk-form input[type="month"],
+	.uk-contrast .uk-form input[type="time"],
+	.uk-contrast .uk-form input[type="week"],
+	.uk-contrast .uk-form input[type="number"],
+	.uk-contrast .uk-form input[type="email"],
+	.uk-contrast .uk-form input[type="url"],
+	.uk-contrast .uk-form input[type="search"],
+	.uk-contrast .uk-form input[type="tel"],
+	.uk-contrast .uk-form input[type="color"] {
+		border-color: fade(#fff, 80%);
+		background: fade(#fff, 80%);
+		color: #444;
+		background-clip: padding-box; }
+		.uk-contrast .uk-form select:focus,
+		.uk-contrast .uk-form textarea:focus,
+		.uk-contrast .uk-form input:not([type]):focus,
+		.uk-contrast .uk-form input[type="text"]:focus,
+		.uk-contrast .uk-form input[type="password"]:focus,
+		.uk-contrast .uk-form input[type="datetime"]:focus,
+		.uk-contrast .uk-form input[type="datetime-local"]:focus,
+		.uk-contrast .uk-form input[type="date"]:focus,
+		.uk-contrast .uk-form input[type="month"]:focus,
+		.uk-contrast .uk-form input[type="time"]:focus,
+		.uk-contrast .uk-form input[type="week"]:focus,
+		.uk-contrast .uk-form input[type="number"]:focus,
+		.uk-contrast .uk-form input[type="email"]:focus,
+		.uk-contrast .uk-form input[type="url"]:focus,
+		.uk-contrast .uk-form input[type="search"]:focus,
+		.uk-contrast .uk-form input[type="tel"]:focus,
+		.uk-contrast .uk-form input[type="color"]:focus {
+			border-color: #fff;
+			background: #fff;
+			color: #444; }
+	.uk-contrast .uk-form :-ms-input-placeholder {
+		color: fade(#444, 70%) !important; }
+	.uk-contrast .uk-form ::-moz-placeholder {
+		color: fade(#444, 70%); }
+	.uk-contrast .uk-form ::-webkit-input-placeholder {
+		color: fade(#444, 70%); }
+	.uk-contrast .uk-button {
+		color: #444;
+		background: #fff; }
+	.uk-contrast .uk-button:hover,
+	.uk-contrast .uk-button:focus {
+		background-color: fade(#fff, 80%);
+		color: #444; }
+	.uk-contrast .uk-button:active,
+	.uk-contrast .uk-button.uk-active {
+		background-color: fade(#fff, 70%);
+		color: #444; }
+	.uk-contrast .uk-button-primary {
+		background-color: #00a8e6;
+		color: #fff; }
+	.uk-contrast .uk-button-primary:hover,
+	.uk-contrast .uk-button-primary:focus {
+		background-color: #35b3ee;
+		color: #fff; }
+	.uk-contrast .uk-button-primary:active,
+	.uk-contrast .uk-button-primary.uk-active {
+		background-color: #0091ca;
+		color: #fff; }
+	.uk-contrast .uk-icon-hover {
+		color: fade(#fff, 70%); }
+	.uk-contrast .uk-icon-hover:hover {
+		color: #fff; }
+	.uk-contrast .uk-icon-button {
+		background: #fff;
+		color: #444; }
+	.uk-contrast .uk-icon-button:hover,
+	.uk-contrast .uk-icon-button:focus {
+		background-color: fade(#fff, 80%);
+		color: #444; }
+	.uk-contrast .uk-icon-button:active {
+		background-color: fade(#fff, 70%);
+		color: #444; }
+	.uk-contrast .uk-text-muted {
+		color: fade(#fff, 60%) !important; }
+	.uk-contrast .uk-text-primary {
+		color: #2d7091 !important; }

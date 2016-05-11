@@ -1,0 +1,98 @@
+@media only screen and (max-width: 640px)
+  %defaultStylingS
+    display: inherit
+    float: left
+  @for $i from 0 through 24
+    @if $i == 0
+      .s-0
+        display: none !important
+    @else
+      .s-#{$i}
+        width: 100% / 24 * $i
+        @extend %defaultStylingS
+  .s-no-bg-img
+    background-image: none !important
+    
+  .s-text-left
+    text-align: left !important
+    
+  .s-text-center
+    text-align: center !important
+    
+  .s-text-right
+    text-align: right !important
+    
+  .s-text-justify
+    text-align: justify !important
+
+  .nopds 
+    padding: 0 !important
+
+  .noms
+    margin: 0 !important
+    
+@media only screen and (min-width: 641px) and (max-width: 1024px)
+  %defaultStylingM
+    display: inherit
+    float: left
+  @for $i from 0 through 24
+    @if $i == 0
+      .m-0
+        display: none !important
+    @else
+      .m-#{$i}
+        width: 100% / 24 * $i
+        @extend %defaultStylingM
+  .m-no-bg-img
+    background-image: none !important
+    
+  .m-text-left
+    text-align: left !important
+    
+  .m-text-center
+    text-align: center !important
+    
+  .m-text-right
+    text-align: right !important
+    
+  .m-text-justify
+    text-align: justify !important
+
+  .nopdm
+    padding: 0 !important
+
+  .nomm
+    margin: 0 !important
+
+@media only screen and (min-width: 1025px)
+  %defaultStylingL
+    display: inherit
+    float: left
+  @for $i from 0 through 24
+    @if $i == 0
+      .l-0
+        display: none !important
+    @else
+      .l-#{$i}
+        width: 100% / 24 * $i
+        @extend %defaultStylingL
+  .l-no-bg-img
+    background-image: none !important
+    
+  .l-text-left
+    text-align: left !important
+    
+  .l-text-center
+    text-align: center !important
+    
+  .l-text-right
+    text-align: right !important
+    
+  .l-text-justify
+    text-align: justify !important
+
+  .nopdl
+    padding: 0 !important
+
+  .noml
+    margin: 0 !important

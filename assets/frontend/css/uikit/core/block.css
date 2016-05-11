@@ -1,0 +1,47 @@
+.uk-block {
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 20px;
+	padding-bottom: 20px; }
+
+@media (min-width: 1025px) {
+	.uk-block {
+		padding-top: 50px;
+		padding-bottom: 50px; } }
+
+.uk-block:before,
+.uk-block:after {
+	content: "";
+	display: table; }
+
+.uk-block:after {
+	clear: both; }
+
+.uk-block > :last-child {
+	margin-bottom: 0; }
+
+.uk-block-large {
+	padding-top: 20px;
+	padding-bottom: 20px; }
+
+@media (min-width: 1025px) {
+	.uk-block-large {
+		padding-top: 50px;
+		padding-bottom: 50px; } }
+
+@media (min-width: 1441px) {
+	.uk-block-large {
+		padding-top: 100px;
+		padding-bottom: 100px; } }
+
+.uk-block-default {
+	background: #fff; }
+
+.uk-block-muted {
+	background: #f9f9f9; }
+
+.uk-block-primary {
+	background: #00a8e6; }
+
+.uk-block-secondary {
+	background: #222; }

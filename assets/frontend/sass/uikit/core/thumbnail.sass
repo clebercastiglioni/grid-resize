@@ -1,0 +1,74 @@
+// Name:            Thumbnail
+// Description:     Defines styles for image thumbnails
+//
+// Component:       `uk-thumbnail`
+//
+// Sub-objects:     `uk-thumbnail-caption`
+//
+// Modifiers:       `uk-thumbnail-mini`
+//                  `uk-thumbnail-small`
+//                  `uk-thumbnail-medium`
+//                  `uk-thumbnail-large`
+//                  `uk-thumbnail-expand`
+//
+// Markup:
+//
+// <!-- uk-thumbnail -->
+// <figure class="uk-thumbnail">
+//     <img src="" alt="">
+//     <figcaption class="uk-thumbnail-caption"></figcaption>
+// </figure>
+//
+// ========================================================================
+
+$thumbnail-padding:                              4px !default
+$thumbnail-border:                               #ddd !default
+$thumbnail-border-width:                         1px !default
+$thumbnail-background:                           #fff !default
+$thumbnail-hover-border:                         #aaa !default
+$thumbnail-hover-background:                     #fff !default
+
+$thumbnail-caption-padding:                      $thumbnail-padding !default
+$thumbnail-caption-color:                        #444 !default
+
+$thumbnail-mini-width:                           150px !default
+$thumbnail-small-width:                          200px !default
+$thumbnail-medium-width:                         300px !default
+$thumbnail-large-width:                          400px !default
+
+.uk-thumbnail 
+    display: inline-block
+    max-width: 100%
+    box-sizing: border-box
+    margin: 0
+    padding: $thumbnail-padding
+    border: $thumbnail-border-width solid $thumbnail-border
+    background: $thumbnail-background
+
+a.uk-thumbnail:hover,
+a.uk-thumbnail:focus 
+    border-color: $thumbnail-hover-border
+    background-color: $thumbnail-hover-background
+    text-decoration: none
+    outline: none
+
+.uk-thumbnail-caption 
+    padding-top: $thumbnail-caption-padding
+    text-align: center
+    color: $thumbnail-caption-color
+
+.uk-thumbnail-mini  
+    width: $thumbnail-mini-width 
+
+.uk-thumbnail-small  
+    width: $thumbnail-small-width 
+
+.uk-thumbnail-medium  
+    width: $thumbnail-medium-width 
+
+.uk-thumbnail-large  
+    width: $thumbnail-large-width 
+
+.uk-thumbnail-expand,
+.uk-thumbnail-expand > img  
+    width: 100% 

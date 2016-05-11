@@ -1,0 +1,59 @@
+$block-padding-vertical:                         20px !default
+$block-padding-vertical-large:                   50px !default
+
+$block-large-padding-vertical:                   $block-padding-vertical !default
+$block-large-padding-vertical-medium:            $block-padding-vertical-large !default
+$block-large-padding-vertical-large:             100px !default
+
+$block-default-background:                       #fff !default
+$block-muted-background:                         #f9f9f9 !default
+$block-primary-background:                       #00a8e6 !default
+$block-secondary-background:                     #222 !default
+
+.uk-block 
+    position: relative
+    box-sizing: border-box
+    padding-top: $block-padding-vertical
+    padding-bottom: $block-padding-vertical
+
+@media (min-width: 1025px) 
+    .uk-block 
+        padding-top: $block-padding-vertical-large
+        padding-bottom: $block-padding-vertical-large
+    
+.uk-block:before,
+.uk-block:after 
+    content: ""
+    display: table
+
+.uk-block:after  
+    clear: both 
+
+.uk-block > :last-child  
+    margin-bottom: 0 
+
+.uk-block-large 
+    padding-top: $block-large-padding-vertical
+    padding-bottom: $block-large-padding-vertical
+
+@media (min-width: 1025px) 
+    .uk-block-large 
+        padding-top: $block-large-padding-vertical-medium
+        padding-bottom: $block-large-padding-vertical-medium
+
+@media (min-width: 1441px) 
+    .uk-block-large 
+        padding-top: $block-large-padding-vertical-large
+        padding-bottom: $block-large-padding-vertical-large
+    
+.uk-block-default 
+    background: $block-default-background
+
+.uk-block-muted 
+    background: $block-muted-background
+
+.uk-block-primary 
+    background: $block-primary-background
+
+.uk-block-secondary 
+    background: $block-secondary-background

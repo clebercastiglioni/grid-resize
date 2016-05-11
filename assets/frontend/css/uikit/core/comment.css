@@ -1,0 +1,44 @@
+.uk-comment-header {
+	margin-bottom: 15px; }
+
+.uk-comment-header:before,
+.uk-comment-header:after {
+	content: "";
+	display: table; }
+
+.uk-comment-header:after {
+	clear: both; }
+
+.uk-comment-avatar {
+	margin-right: 15px;
+	float: left; }
+
+.uk-comment-title {
+	margin: 5px 0 0 0;
+	font-size: 16px;
+	line-height: 22px; }
+
+.uk-comment-meta {
+	margin: 2px 0 0 0;
+	font-size: 11px;
+	line-height: 16px;
+	color: #999; }
+
+.uk-comment-body > :last-child {
+	margin-bottom: 0; }
+
+.uk-comment-list {
+	padding: 0;
+	list-style: none; }
+
+.uk-comment-list .uk-comment + ul {
+	margin: 15px 0 0 0;
+	list-style: none; }
+
+.uk-comment-list > li:nth-child(n+2),
+.uk-comment-list .uk-comment + ul > li:nth-child(n+2) {
+	margin-top: 15px; }
+
+@media (min-width: 1025px) {
+	.uk-comment-list .uk-comment + ul {
+		padding-left: 100px; } }

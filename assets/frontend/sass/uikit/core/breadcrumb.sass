@@ -1,0 +1,44 @@
+// Name:            Breadcrumb
+// Description:     Defines styles for a breadcrumb navigation
+//
+// Component:       `uk-breadcrumb`
+//
+// States:          `uk-active`
+//
+// Markup:
+//
+// <!-- uk-breadcrumb -->
+// <ul class="uk-breadcrumb">
+//     <li><a href=""></a></li>
+//     <li><span></span></li>
+//     <li class="uk-active"><span></span></li>
+// </ul>
+//
+// ========================================================================
+$breadcrumb-font-size:                           1rem !default
+
+$breadcrumb-divider:                             "/" !default
+$breadcrumb-divider-margin:                      8px !default
+$breadcrumb-disabled-color:                      #999 !default
+
+.uk-breadcrumb 
+    padding: 0
+    list-style: none
+    font-size: 0.001px
+
+.uk-breadcrumb > li 
+    font-size: $breadcrumb-font-size
+    vertical-align: top
+
+.uk-breadcrumb > li,
+.uk-breadcrumb > li > a,
+.uk-breadcrumb > li > span  
+    display: inline-block 
+
+.uk-breadcrumb > li:nth-child(n+2):before 
+    content: $breadcrumb-divider
+    display: inline-block
+    margin: 0 $breadcrumb-divider-margin
+
+.uk-breadcrumb > li:not(.uk-active) > span  
+    color: $breadcrumb-disabled-color 

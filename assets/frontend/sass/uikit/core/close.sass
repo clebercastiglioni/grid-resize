@@ -1,0 +1,49 @@
+$close-size:                                     24px !default
+
+$close-alt-padding:                              0 !default
+$close-alt-background:                           #222222 !default
+
+.uk-close::-moz-focus-inner 
+    border: 0
+    padding: 0
+
+.uk-close 
+    -webkit-appearance: none
+    margin: 0
+    border: none
+    overflow: visible
+    font: inherit
+    color: #fff
+    text-transform: none
+    padding: 0
+    background: $close-alt-background
+    display: inline-block
+    box-sizing: content-box
+    width: $close-size
+    line-height: $close-size
+    text-align: center
+    vertical-align: middle
+    opacity: 1
+    border: 2px solid #fff
+    border-radius: 100%
+
+.uk-close:after 
+    display: block
+    content: "\f00d"
+    font-family: FontAwesome
+    font-size: 13px
+
+.uk-close:hover,
+.uk-close:focus
+    text-decoration: none
+    cursor: pointer
+    color: #fff
+
+.uk-close-alt 
+    padding: $close-alt-padding
+    border-radius: 100%
+    background: $close-alt-background
+
+.uk-close-alt:hover,
+.uk-close-alt:focus  
+    opacity: 1 

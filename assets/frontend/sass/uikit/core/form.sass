@@ -1,0 +1,373 @@
+// Name:            Form
+// Description:     Defines styles for forms
+//
+// Component:       `uk-form`
+//
+// Sub-objects:     `uk-form-row`
+//                  `uk-form-help-inline`
+//                  `uk-form-help-block`
+//                  `uk-form-label`
+//                  `uk-form-controls`
+//                  `uk-form-controls-condensed`
+//                  `uk-form-icon`
+//
+// Modifiers:       `uk-form-stacked`
+//                  `uk-form-horizontal`
+//
+// Sub-modifiers:   `uk-form-danger`
+//                  `uk-form-success`
+//                  `uk-form-small`
+//                  `uk-form-large`
+//                  `uk-form-blank`
+//                  `uk-form-width-mini`
+//                  `uk-form-width-small`
+//                  `uk-form-width-medium`
+//                  `uk-form-width-large`
+//                  `uk-form-controls-text`
+//
+// Markup:
+//
+// <!-- uk-form -->
+// <form class="uk-form">
+//     <div class="uk-form-row">
+//         <label class="uk-form-label" for="form-input-1"></label>
+//         <div class="uk-form-controls">
+//             <input type="text" id="form-input-1" placeholder="Text">
+//         </div>
+//     </div>
+// </form>
+//
+// ========================================================================
+
+$form-height:                                    30px !default
+$form-padding:                                   4px 6px !default
+$form-border:                                    #ddd !default
+$form-border-width:                              1px !default
+$form-background:                                #fff !default
+$form-color:                                     #444 !default
+
+$form-focus-border:                              #99baca !default
+$form-focus-background:                          #f5fbfe !default
+$form-focus-color:                               #444 !default
+
+$form-disabled-border:                           #ddd !default
+$form-disabled-background:                       #f5f5f5 !default
+$form-disabled-color:                            #999 !default
+
+$form-placeholder-color:                         #999 !default
+
+$form-gutter:                                    15px !default
+
+$form-legend-border:                             #ddd !default
+$form-legend-border-width:                       1px !default
+$form-legend-font-size:                          18px !default
+$form-legend-line-height:                        30px !default
+
+$form-small-height:                              25px !default
+$form-large-height:                              40px !default
+$form-small-padding:                             3px 3px !default
+$form-large-padding:                             8px 6px !default
+$form-small-font-size:                           12px !default
+$form-large-font-size:                           16px !default
+
+$form-danger-border:                             #dc8d99 !default
+$form-danger-background:                         #fff7f8 !default
+$form-danger-color:                              #d85030 !default
+
+$form-success-border:                            #8ec73b !default
+$form-success-background:                        #fafff2 !default
+$form-success-color:                             #659f13 !default
+
+$form-blank-border:                              #ddd !default
+$form-blank-border-style:                        dashed !default
+
+$form-mini-width:                                40px !default
+$form-small-width:                               130px !default
+$form-medium-width:                              200px !default
+$form-large-width:                               500px !default
+
+$form-help-inline-margin-left:                   10px !default
+$form-help-block-margin-top:                     5px !default
+
+$form-controls-condensed-margin-vertical:        5px !default
+
+$form-stacked-margin-bottom:                     5px !default
+$form-stacked-font-weight:                       bold !default
+
+$form-horizontal-label-width:                    200px !default
+$form-horizontal-label-margin-top:               5px !default
+$form-horizontal-controls-margin-left:           215px !default
+$form-horizontal-controls-text-padding-top:      5px !default
+
+$form-icon-width:                                30px !default
+$form-icon-font-size:                            14px !default
+$form-icon-color:                                #999 !default
+
+
+.uk-form input,
+.uk-form select,
+.uk-form textarea 
+    box-sizing: border-box
+    margin: 0
+    border-radius: 0
+    font: inherit
+    color: inherit
+
+.uk-form select  
+    text-transform: none 
+
+.uk-form optgroup 
+    font: inherit
+    font-weight: bold
+
+.uk-form input::-moz-focus-inner 
+    border: 0
+    padding: 0
+
+.uk-form input[type="checkbox"],
+.uk-form input[type="radio"]  
+    padding: 0 
+
+.uk-form input[type="checkbox"]:not(:disabled),
+.uk-form input[type="radio"]:not(:disabled)  
+    cursor: pointer 
+
+.uk-form textarea,
+.uk-form input:not([type]),
+.uk-form input[type="text"],
+.uk-form input[type="password"],
+.uk-form input[type="email"],
+.uk-form input[type="url"],
+.uk-form input[type="search"],
+.uk-form input[type="tel"],
+.uk-form input[type="number"],
+.uk-form input[type="datetime"]  
+    -webkit-appearance: none 
+
+.uk-form input[type="search"]::-webkit-search-cancel-button,
+.uk-form input[type="search"]::-webkit-search-decoration  
+    -webkit-appearance: none 
+
+.uk-form input[type="number"]::-webkit-inner-spin-button,
+.uk-form input[type="number"]::-webkit-outer-spin-button  
+    height: auto 
+
+.uk-form fieldset 
+    border: none
+    margin: 0
+    padding: 0
+
+.uk-form textarea 
+    overflow: auto
+    vertical-align: top
+
+.uk-form ::-moz-placeholder  
+    opacity: 1 
+
+.uk-form :invalid  
+    box-shadow: none 
+
+.uk-form input:not([type="radio"]):not([type="checkbox"]),
+.uk-form select  
+    vertical-align: middle 
+
+.uk-form > :last-child  
+    margin-bottom: 0 
+
+.uk-form select,
+.uk-form textarea,
+.uk-form input:not([type]),
+.uk-form input[type="text"],
+.uk-form input[type="password"],
+.uk-form input[type="datetime"],
+.uk-form input[type="datetime-local"],
+.uk-form input[type="date"],
+.uk-form input[type="month"],
+.uk-form input[type="time"],
+.uk-form input[type="week"],
+.uk-form input[type="number"],
+.uk-form input[type="email"],
+.uk-form input[type="url"],
+.uk-form input[type="search"],
+.uk-form input[type="tel"],
+.uk-form input[type="color"] 
+    height: $form-height
+    max-width: 100%
+    padding: $form-padding
+    border: $form-border-width solid $form-border
+    background: $form-background
+    color: $form-color
+    -webkit-transition: all linear 0.2s
+    transition: all linear 0.2s
+
+    &:focus 
+        border-color: $form-focus-border
+        outline: 0
+        background: $form-focus-background
+        color: $form-focus-color
+
+    &:disabled 
+        border-color: $form-disabled-border
+        background-color: $form-disabled-background
+        color: $form-disabled-color
+    
+
+.uk-form :-ms-input-placeholder  
+    color: $form-placeholder-color !important 
+
+.uk-form ::-moz-placeholder  
+    color: $form-placeholder-color 
+
+.uk-form ::-webkit-input-placeholder  
+    color: $form-placeholder-color 
+
+.uk-form :disabled:-ms-input-placeholder  
+    color: $form-disabled-color !important 
+.uk-form :disabled::-moz-placeholder  
+    color: $form-disabled-color 
+.uk-form :disabled::-webkit-input-placeholder  
+    color: $form-disabled-color 
+
+.uk-form legend 
+    width: 100%
+    border: 0
+    padding: 0
+    padding-bottom: $form-gutter
+    font-size: $form-legend-font-size
+    line-height: $form-legend-line-height
+
+.uk-form legend:after 
+    content: ""
+    display: block
+    border-bottom: $form-legend-border-width solid $form-legend-border
+    width: 100%
+
+select.uk-form-small,
+textarea.uk-form-small,
+input[type].uk-form-small,
+input:not([type]).uk-form-small 
+    height: $form-small-height
+    padding: $form-small-padding
+    font-size: $form-small-font-size
+
+select.uk-form-large,
+textarea.uk-form-large,
+input[type].uk-form-large,
+input:not([type]).uk-form-large  
+    height: $form-large-height
+    padding: $form-large-padding
+    font-size: $form-large-font-size
+
+.uk-form textarea,
+.uk-form select[multiple],
+.uk-form select[size]  
+    height: auto 
+
+.uk-form-danger 
+    border-color: $form-danger-border !important
+    background: $form-danger-background !important
+    color: $form-danger-color !important
+
+.uk-form-success  
+    border-color: $form-success-border !important
+    background: $form-success-background !important
+    color: $form-success-color !important
+
+.uk-form-blank 
+    border-color: transparent !important
+    border-style: $form-blank-border-style !important
+    background: none !important
+
+.uk-form-blank:focus 
+    border-color: $form-blank-border !important
+
+input.uk-form-width-mini  
+    width: $form-mini-width 
+
+select.uk-form-width-mini  
+    width: ($form-mini-width + 25px) 
+
+.uk-form-width-small  
+    width: $form-small-width 
+
+.uk-form-width-medium  
+    width: $form-medium-width 
+
+.uk-form-width-large  
+    width: $form-large-width 
+
+.uk-form-row:before,
+.uk-form-row:after 
+    content: ""
+    display: table
+
+.uk-form-row:after  
+    clear: both 
+
+.uk-form-row + .uk-form-row  
+    margin-top: $form-gutter 
+
+
+.uk-form-help-inline 
+    display: inline-block
+    margin: 0 0 0 $form-help-inline-margin-left
+
+
+.uk-form-help-block  
+    margin: $form-help-block-margin-top 0 0 0 
+
+.uk-form-controls > :first-child  
+    margin-top: 0 
+
+.uk-form-controls > :last-child  
+    margin-bottom: 0 
+
+.uk-form-controls-condensed  
+    margin: $form-controls-condensed-margin-vertical 0 
+
+.uk-form-stacked .uk-form-label 
+    display: block
+    margin-bottom: $form-stacked-margin-bottom
+    font-weight: $form-stacked-font-weight
+
+@media (max-width: 1440px) 
+    .uk-form-horizontal .uk-form-label 
+        display: block
+        margin-bottom: $form-stacked-margin-bottom
+        font-weight: $form-stacked-font-weight
+    
+@media (min-width: 1441px) 
+    .uk-form-horizontal .uk-form-label 
+        width: $form-horizontal-label-width
+        margin-top: $form-horizontal-label-margin-top
+        float: left
+    
+    .uk-form-horizontal .uk-form-controls  
+        margin-left: $form-horizontal-controls-margin-left 
+
+    .uk-form-horizontal .uk-form-controls-text  
+        padding-top: $form-horizontal-controls-text-padding-top 
+
+.uk-form-icon 
+    display: inline-block
+    position: relative
+    max-width: 100%
+
+.uk-form-icon > [class*='uk-icon-'] 
+    position: absolute
+    top: 50%
+    width: $form-icon-width
+    margin-top: round(($form-height - $form-icon-font-size) / -2)
+    font-size: $form-icon-font-size
+    color: $form-icon-color
+    text-align: center
+    pointer-events: none
+
+.uk-form-icon:not(.uk-form-icon-flip) > input  
+    padding-left: $form-icon-width !important 
+
+.uk-form-icon-flip > [class*='uk-icon-']  
+    right: 0 
+
+.uk-form-icon-flip > input  
+    padding-right: $form-icon-width !important 

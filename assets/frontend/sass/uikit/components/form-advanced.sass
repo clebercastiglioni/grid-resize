@@ -1,0 +1,69 @@
+$form-advanced-size:                           14px !default
+$form-advanced-border:                         #aaa !default
+$form-advanced-border-width:                   1px !default
+$form-advanced-margin-top:                     -4px !default
+$form-advanced-color:                          transparent !default
+
+$form-advanced-checked-color:                  #00a8e6 !default
+
+$form-advanced-radio-size:                     8px !default
+
+$form-advanced-checkbox-icon:                  "\f00c" !default
+$form-advanced-checkbox-indeterminate-icon:    "\f068" !default
+$form-advanced-checkbox-font-size:             12px !default
+
+$form-advanced-disabled-border:                #ddd !default
+$form-advanced-disabled-color:                 #aaa !default
+
+.uk-form input[type="radio"],
+.uk-form input[type="checkbox"] 
+    display: inline-block
+    height: $form-advanced-size
+    width: $form-advanced-size
+    border: $form-advanced-border-width solid $form-advanced-border
+    overflow: hidden
+    margin-top: $form-advanced-margin-top
+    vertical-align: middle
+    -webkit-appearance: none
+    outline: 0
+    background: $form-advanced-color
+
+.uk-form input[type="radio"]  
+    border-radius: 50% 
+
+.uk-form input[type=radio]:before,
+.uk-form input[type=checkbox]:before 
+    display: block
+
+.uk-form input[type=radio]:checked:before 
+    content: ''
+    width: $form-advanced-radio-size
+    height: $form-advanced-radio-size
+    margin: (($form-advanced-size - (2 * $form-advanced-border-width) - $form-advanced-radio-size) / 2) auto 0
+    border-radius: 50%
+    background: $form-advanced-checked-color
+
+.uk-form input[type=checkbox]:checked:before,
+.uk-form input[type=checkbox]:indeterminate:before 
+    content: $form-advanced-checkbox-icon
+    font-family: FontAwesome
+    font-size: $form-advanced-checkbox-font-size
+    -webkit-font-smoothing: antialiased
+    text-align: center
+    line-height: $form-advanced-size - (2 * $form-advanced-border-width)
+    color: $form-advanced-checked-color
+
+.uk-form input[type=checkbox]:indeterminate:before  
+    content: $form-advanced-checkbox-indeterminate-icon 
+
+.uk-form input[type=radio]:disabled,
+.uk-form input[type=checkbox]:disabled 
+    border-color: $form-advanced-disabled-border
+
+
+.uk-form input[type=radio]:disabled:checked:before  
+    background-color: $form-advanced-disabled-color 
+
+.uk-form input[type=checkbox]:disabled:checked:before,
+.uk-form input[type=checkbox]:disabled:indeterminate:before  
+    color: $form-advanced-disabled-color 

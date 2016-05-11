@@ -1,0 +1,48 @@
+.uk-slidenav {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: rgba(50, 50, 50, 0.4);
+	font-size: 30px;
+	text-align: center; }
+
+.uk-slidenav:hover,
+.uk-slidenav:focus {
+	outline: none;
+	text-decoration: none;
+	color: rgba(50, 50, 50, 0.7);
+	cursor: pointer; }
+
+.uk-slidenav:active {
+	color: rgba(50, 50, 50, 0.9); }
+
+.uk-slidenav-position {
+	position: relative; }
+
+.uk-slidenav-position .uk-slidenav {
+	display: none;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	margin-top: -15px; }
+
+.uk-slidenav-position:hover .uk-slidenav {
+	display: block; }
+
+.uk-slidenav-position .uk-slidenav-previous {
+	left: 20px; }
+
+.uk-slidenav-position .uk-slidenav-next {
+	right: 20px; }
+
+.uk-slidenav-contrast {
+	color: rgba(255, 255, 255, 0.5); }
+
+.uk-slidenav-contrast:hover,
+.uk-slidenav-contrast:focus {
+	color: rgba(255, 255, 255, 0.7); }
+
+.uk-slidenav-contrast:active {
+	color: rgba(255, 255, 255, 0.9); }

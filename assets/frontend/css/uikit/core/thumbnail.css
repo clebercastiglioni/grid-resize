@@ -1,0 +1,36 @@
+.uk-thumbnail {
+	display: inline-block;
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 4px;
+	border: 1px solid #ddd;
+	background: #fff; }
+
+a.uk-thumbnail:hover,
+a.uk-thumbnail:focus {
+	border-color: #aaa;
+	background-color: #fff;
+	text-decoration: none;
+	outline: none; }
+
+.uk-thumbnail-caption {
+	padding-top: 4px;
+	text-align: center;
+	color: #444; }
+
+.uk-thumbnail-mini {
+	width: 150px; }
+
+.uk-thumbnail-small {
+	width: 200px; }
+
+.uk-thumbnail-medium {
+	width: 300px; }
+
+.uk-thumbnail-large {
+	width: 400px; }
+
+.uk-thumbnail-expand,
+.uk-thumbnail-expand > img {
+	width: 100%; }

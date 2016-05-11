@@ -1,0 +1,93 @@
+.show-product {
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%); }
+  .show-product > section {
+    overflow: hidden; }
+
+.fade-out nav {
+  opacity: 0 !important; }
+
+.lazyload-placeholder:before,
+#loadingProduct {
+  width: 70px;
+  height: 70px;
+  background-image: url(../img/refresh-icon.png);
+  -webkit-animation: rotate 1.5s infinite;
+  animation: rotate 1.5s infinite;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 1; }
+  .lazyload-placeholder:before.fade-out-scale,
+  #loadingProduct.fade-out-scale {
+    -webkit-animation: fadeOutScale 400ms;
+    animation: fadeOutScale 400ms;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes fadeOutScale {
+  from {
+    -moz-transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1; }
+  to {
+    -moz-transform: rotate(0deg) scale(0.8);
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -o-transform: rotate(0deg) scale(0.8);
+    -ms-transform: rotate(0deg) scale(0.8);
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0; } }
+
+@keyframes fadeOutScale {
+  from {
+    -moz-transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1; }
+  to {
+    -moz-transform: rotate(0deg) scale(0.8);
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -o-transform: rotate(0deg) scale(0.8);
+    -ms-transform: rotate(0deg) scale(0.8);
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0; } }
+
+@-webkit-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }

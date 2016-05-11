@@ -1,0 +1,121 @@
+// {{UTILITY MIXINS}}
+
+// Selection
+@mixin selection
+	::-moz-selection
+		@content
+	::selection
+		@content
+
+// Placeholder styling
+@mixin placeholder
+	& ::-webkit-input-placeholder
+		@content
+
+	& :-moz-placeholder
+		@content
+
+	& ::-moz-placeholder
+		@content
+
+	& :-ms-input-placeholder
+		@content
+
+// Transforms
+@mixin transform($property)
+	-moz-transform:		$property
+	-o-transform: 		$property
+	-ms-transform: 		$property
+	-webkit-transform: 	$property
+	transform: 			$property
+
+// Media queries
+@mixin media($viewport)
+	@media screen and (max-width: #{$viewport}px)
+		@content
+		%hidden#{$viewport}
+			display: none
+
+// Usar mixin de transition somente dentro de media queries, se for fora de media queries, usar o placeholder
+@mixin transition($duration: 180ms)
+	-webkit-transition: all ease-in-out $duration
+	-moz-transition:    all ease-in-out $duration
+	-o-transition:      all ease-in-out $duration
+	-ms-transition:     all ease-in-out $duration
+	transition:         all ease-in-out $duration
+
+// Cubic-bezier transition
+@mixin smooth-transition($duration: 400ms)
+	-webkit-transition: all cubic-bezier(.55,0,.1,1) $duration
+	-moz-transition:    all cubic-bezier(.55,0,.1,1) $duration
+	-o-transition:      all cubic-bezier(.55,0,.1,1) $duration
+	-ms-transition:     all cubic-bezier(.55,0,.1,1) $duration
+	transition:         all cubic-bezier(.55,0,.1,1) $duration
+
+// Gradients
+@mixin gradient($from, $to, $direction: null)
+	@if $direction == 'horizontal'
+		background: $from
+		background: -moz-linear-gradient(left, $from 0%, $to 100%)
+		background: -webkit-linear-gradient(left, $from 0%, $to 100%)
+		background: linear-gradient(to right, $from 0%, $to 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=1 )
+	@else
+		background: $from
+		background: -moz-linear-gradient(top, $from 0%, $to 100%)
+		background: -webkit-linear-gradient(top, $from 0%,$to 100%)
+		background: linear-gradient(to bottom, $from 0%,$to 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 )
+
+// Misc classes (margin, padding and font-sizes)
+@mixin misc($selector, $important: null)
+	$shortcuts: 'mtop' 'mright' 'mbot' 'mleft' 'pdtop' 'pdright' 'pdbot' 'pdleft'
+	$properties: 'margin-top' 'margin-right' 'margin-bottom' 'margin-left' 'padding-top' 'padding-right' 'padding-bottom' 'padding-left'
+	
+	@if str-index($selector, 'fsize')
+		// Font-sizes
+		$index: str-length($selector) - str-index($selector, 'fsize')
+		$length: str-length($selector)
+
+		$fontSize: str-slice($selector, $index, $length)
+		$fontSize: unquote($fontSize)
+
+		.#{$selector}
+			font-size: #{$fontSize}px
+	@else
+		// Margins and paddings
+		@each $s in $shortcuts 
+			$index: str-index($selector, $s)
+			$responsive: str-index($selector, 'resp')
+
+			@if $index and $responsive
+				$property: nth($properties, index($shortcuts, $s))
+				$selector: str-slice($selector, 0, str-index($selector, 'resp') - 1)
+
+				$value: number($selector)
+				$value: ($value / 10)
+		
+				.#{$selector}resp
+					@if $important
+						#{$property}: #{$value}rem $important
+					@else 
+						#{$property}: #{$value}rem
+
+			@else if $index
+				$property: nth($properties, index($shortcuts, $s))
+
+				$value: number($selector)
+
+				.#{$selector}
+					@if $important
+						#{$property}: #{$value}px $important
+					@else 
+						#{$property}: #{$value}px 
+
+// Keyframes
+@mixin keyframes($keyframesName)
+	@-webkit-keyframes #{$keyframesName}
+		@content
+
+	@keyframes #{$keyframesName}
+		@content

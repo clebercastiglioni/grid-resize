@@ -1,0 +1,96 @@
+// Name:            Progress
+// Description:     Defines styles for progress bars
+//
+// Component:       `uk-progress`
+//
+// Sub-objects:     `uk-progress-bar`
+//
+// Modifiers:       `uk-progress-mini`
+//                  `uk-progress-small`
+//                  `uk-progress-success`
+//                  `uk-progress-warning`
+//                  `uk-progress-danger`
+//                  `uk-progress-striped`
+//
+// Markup:
+//
+// <!-- uk-progress -->
+// <div class="uk-progress">
+//     <div class="uk-progress-bar" style="width: 40%"></div>
+// </div>
+//
+// ========================================================================
+
+$progress-height:                                20px !default
+$progress-mini-height:                           6px !default
+$progress-small-height:                          12px !default
+
+$progress-margin-vertical:                       15px !default
+$progress-background:                            #eee !default
+
+$progress-bar-background:                        #00a8e6 !default
+$progress-bar-font-size:                         12px !default
+$progress-bar-color:                             #fff !default
+
+$progress-bar-success-background:                #8cc14c !default
+$progress-bar-warning-background:                #faa732 !default
+$progress-bar-danger-background:                 #da314b !default
+
+.uk-progress 
+    box-sizing: border-box
+    height: $progress-height
+    margin-bottom: $progress-margin-vertical
+    background: $progress-background
+    overflow: hidden
+    line-height: $progress-height
+
+* + .uk-progress  
+    margin-top: $progress-margin-vertical 
+
+.uk-progress-bar 
+    width: 0
+    height: 100%
+    background: $progress-bar-background
+    float: left
+    -webkit-transition: width 0.6s ease
+    transition: width 0.6s ease
+    font-size: $progress-bar-font-size
+    color: $progress-bar-color
+    text-align: center
+
+.uk-progress-mini 
+    height: $progress-mini-height
+
+.uk-progress-small 
+    height: $progress-small-height
+
+.uk-progress-success .uk-progress-bar 
+    background-color: $progress-bar-success-background
+
+.uk-progress-warning .uk-progress-bar 
+    background-color: $progress-bar-warning-background
+
+.uk-progress-danger .uk-progress-bar 
+    background-color: $progress-bar-danger-background
+
+.uk-progress-striped .uk-progress-bar 
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+    background-size: 30px 30px
+
+.uk-progress-striped.uk-active .uk-progress-bar 
+    -webkit-animation: uk-progress-bar-stripes 2s linear infinite
+    animation: uk-progress-bar-stripes 2s linear infinite
+
+@-webkit-keyframes uk-progress-bar-stripes 
+    0%  
+        background-position: 0 0
+    100%  
+        background-position: 30px 0 
+
+
+@keyframes uk-progress-bar-stripes 
+    0%  
+        background-position: 0 0
+    100%  
+        background-position: 30px 0

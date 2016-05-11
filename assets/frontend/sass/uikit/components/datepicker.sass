@@ -1,0 +1,112 @@
+// Variables
+// ========================================================================
+
+$datepicker-z-index:                             1050 !default
+$datepicker-animation:                           uk-fade !default
+
+$datepicker-nav-height:                          20px !default
+$datepicker-nav-margin-bottom:                   15px !default
+$datepicker-nav-color:                           #444 !default
+$datepicker-nav-hover-color:                     #444 !default
+$datepicker-previous-icon:                       "\f053" !default
+$datepicker-next-icon:                           "\f054" !default
+
+$datepicker-table-width:                         26px !default
+$datepicker-table-height:                        24px !default
+$datepicker-table-color:                         #444 !default
+
+$datepicker-table-hover-background:              #ddd !default
+$datepicker-table-hover-color:                   #444 !default
+$datepicker-table-onclick-background:            #ccc !default
+$datepicker-table-onclick-color:                 #444 !default
+
+$datepicker-table-active-background:             #00a8e6 !default
+$datepicker-table-active-color:                  #fff !default
+
+$datepicker-table-muted-color:                   #999 !default
+
+.uk-datepicker
+    z-index: $datepicker-z-index
+    width: auto
+    -webkit-animation: $datepicker-animation 0.2s ease-in-out
+    animation: $datepicker-animation 0.2s ease-in-out
+    -webkit-transform-origin: 0 0
+    transform-origin: 0 0
+
+
+.uk-datepicker-nav 
+    margin-bottom: $datepicker-nav-margin-bottom
+    text-align: center
+    line-height: $datepicker-nav-height
+
+.uk-datepicker-nav:before,
+.uk-datepicker-nav:after 
+    content: ""
+    display: table
+
+.uk-datepicker-nav:after  
+    clear: both 
+
+
+.uk-datepicker-nav a 
+    color: $datepicker-nav-color
+    text-decoration: none
+
+
+.uk-datepicker-nav a:hover  
+    color: $datepicker-nav-hover-color 
+
+.uk-datepicker-previous  
+    float: left 
+.uk-datepicker-next  
+    float: right 
+
+.uk-datepicker-previous:after,
+.uk-datepicker-next:after 
+    width: $datepicker-nav-height
+    font-family: FontAwesome
+
+
+.uk-datepicker-previous:after  
+    content: $datepicker-previous-icon 
+.uk-datepicker-next:after  
+    content: $datepicker-next-icon 
+
+
+.uk-datepicker-heading 
+
+/* Block element behavior */
+.uk-datepicker-table  
+    width: 100% 
+
+.uk-datepicker-table th,
+.uk-datepicker-table td  
+    padding: 2px 
+
+.uk-datepicker-table th  
+    font-size: 12px 
+
+.uk-datepicker-table a 
+    display: block
+    width: $datepicker-table-width
+    line-height: $datepicker-table-height
+    text-align: center
+    color: $datepicker-table-color
+    text-decoration: none
+
+a.uk-datepicker-table-muted  
+    color: $datepicker-table-muted-color 
+
+.uk-datepicker-table a:hover,
+.uk-datepicker-table a:focus
+    background-color: $datepicker-table-hover-background
+    color: $datepicker-table-hover-color
+    outline: none
+
+.uk-datepicker-table a:active 
+    background-color: $datepicker-table-onclick-background
+    color: $datepicker-table-onclick-color
+
+.uk-datepicker-table a.uk-active 
+    background: $datepicker-table-active-background
+    color: $datepicker-table-active-color

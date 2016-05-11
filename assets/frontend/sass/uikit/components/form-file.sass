@@ -1,0 +1,32 @@
+// Name:            Form file
+// Description:     Extends form component
+//
+// Component:       `uk-form`
+//
+// Sub-objects:     `uk-form-file`
+//
+// Markup:
+//
+// <!-- uk-form-file -->
+// <div class="uk-form-file">
+//     <button class="uk-button"></button>
+//     <input type="file">
+// </div>
+//
+// ========================================================================
+
+.uk-form-file 
+    display: inline-block
+    vertical-align: middle
+    position: relative
+    overflow: hidden
+
+.uk-form-file input[type="file"] 
+    position: absolute
+    top: 0
+    z-index: 1
+    width: 100%
+    opacity: 0
+    cursor: pointer
+    left: 0
+    font-size: 500px

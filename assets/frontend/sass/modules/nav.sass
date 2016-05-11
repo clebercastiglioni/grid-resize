@@ -1,0 +1,345 @@
+@import 'variables'
+
+// {{Breakpoints}}
+$breakpoint: 768px
+
+// {{Desktop Colors}}
+$desk-bg: 					#FFFFFF
+$desk-color: 				#FFFFFF
+$desk-color-hover: 			#CCC
+// {{Desktop General Properties}}
+$desk-nav-item-width:		auto
+$desk-nav-item-height: 		30px
+$desk-font-size: 			17px
+// {{Desktop Dropdown Properties}}
+$desk-dropdown-bg:			#FFFFFF
+$desk-dropdown-bg-hover:	#CCC
+$desk-dropdown-color:		#FFFFFF
+$desk-dropdown-color-hover:	#FFFFFF
+$desk-dropdown-item-height:	25px
+$desk-dropdown-width:		140px
+
+// {{Mobile Colors}}
+$mob-bg:					#FFFFFF
+$mob-bg-hover:				#FFFFFF
+$mob-color:					#FFFFFF
+$mob-color-hover:			#FFFFFF
+$mob-nav-item-bg:			#FFFFFF
+$mob-nav-item-color:		#FFFFFF
+$mob-font-size: 			14px
+// {{Mobile General Properties}}
+$mob-nav-height: 			80px
+$mob-nav-item-height: 		40px
+// {{Mobile Dropdown Properties}}
+$mob-dropdown-bg:			#FFFFFF
+$mob-dropdown-bg-hover:		#FFFFFF
+$mob-dropdown-color-hover:	#FFFFFF
+$mob-dropdown-item-color: 	#FFFFFF
+$mob-dropdown-item-height: 	35px
+// {{Menu Toggle Properties}}
+$mob-menu-toggle-height:	40px
+$mob-menu-toggle-width:		40px
+$mob-menu-bar-height:		5px
+$mob-menu-bar-radius:		true
+$mob-menu-bar-color:		#FFFFFF
+$mob-layer:					true
+$mob-layer-color:			rgba(#CCC, .5)
+
+// {{Transitions}}
+$transition-desk-time:		300ms
+$transition-desk-function:	cubic-bezier(.55,0,.1,1)
+$transition-mob-time:		400ms
+$transition-mob-function:	cubic-bezier(.55,0,.1,1)
+
+%transition-desk
+	-webkit-transition: all $transition-desk-time $transition-desk-function
+	-moz-transition: 	all $transition-desk-time $transition-desk-function
+	-ms-transition: 	all $transition-desk-time $transition-desk-function
+	-o-transition: 		all $transition-desk-time $transition-desk-function
+	transition: 		all $transition-desk-time $transition-desk-function
+
+@mixin transform($property)
+	-moz-transform:		$property
+	-o-transform: 		$property
+	-ms-transform: 		$property
+	-webkit-transform: 	$property
+	transform: 			$property
+
+@mixin no-select
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+#menu
+	background-color: $desk-bg
+	color: $desk-color
+	float: left
+
+	li a
+		width: $desk-nav-item-width
+		text-decoration: none
+		height: $desk-nav-item-height
+		line-height: $desk-nav-item-height
+		
+	a
+		color: inherit
+		float: left
+		outline: 0
+		overflow: hidden
+		font-size: $desk-font-size
+		@extend %transition-desk
+
+		&:hover,
+		&.active,
+			color: $desk-color-hover
+
+	ul
+		padding: 0
+		margin: 0
+		list-style: none
+
+		li
+			float: left
+			height: $desk-nav-item-height
+			line-height: $desk-nav-item-height
+			position: relative
+
+.dropdown
+	background-color: $desk-dropdown-bg
+	list-style: none
+	padding-left: 0
+	margin: 0
+	position: absolute
+	top: $desk-nav-item-height
+	width: $desk-dropdown-width
+	color: $desk-color
+	z-index: 10
+
+	li
+		height: auto !important
+
+	li a
+		color: $desk-dropdown-color !important
+		min-width: $desk-dropdown-width
+		float: left
+		height: 0
+		max-height: 0
+		opacity: 0
+		@extend %transition-desk
+
+		&:hover
+			background-color: $desk-dropdown-bg-hover
+			color: $desk-dropdown-color-hover !important
+
+.dropdown:hover > li > a, 
+.dropdown:focus > li > a, 
+.dropdown > li > a:focus, 
+.dropdown > li > a:hover, 
+a:hover + .dropdown > li > a, 
+a:focus + .dropdown > li > a
+	color: $desk-dropdown-color-hover
+	opacity: 1
+	height: $desk-dropdown-item-height
+	line-height: $desk-dropdown-item-height
+	max-height: $desk-dropdown-item-height
+
+.dropdown .dropdown
+	top: 0
+	left: 100%
+
+#menuControl,
+#menuToggle,
+#menuBar,
+.visible-mobile
+	display: none
+
+=mobile()
+	%transition-mob
+		-webkit-transition: all $transition-mob-time $transition-mob-function
+		-moz-transition: 	all $transition-mob-time $transition-mob-function
+		-ms-transition: 	all $transition-mob-time $transition-mob-function
+		-o-transition: 		all $transition-mob-time $transition-mob-function
+		transition: 		all $transition-mob-time $transition-mob-function
+
+	body
+		padding-top: $mob-nav-height
+		margin: 0
+
+	#menu
+		position: fixed
+		top: 0
+		left: 0
+		background-color: $mob-bg
+		color: $mob-color
+		width: 100%
+		height: $mob-nav-height
+		z-index: 10
+
+
+		> ul
+			width: 100%
+			position: inherit !important
+			@include transform(translateY(-100%))
+			@extend %transition-mob
+
+			li
+				width: 100%
+				height: auto
+
+				a
+					margin: 0 !important
+					width: 100%
+					height: $mob-nav-item-height
+					line-height: $mob-nav-item-height
+					text-align: center
+					font-size: $mob-font-size
+					@extend %transition-mob
+
+					&:hover,
+					&:focus,
+					&.active
+						background-color: $mob-bg-hover
+						color: $mob-color-hover
+				
+				> a
+					background-color: $mob-nav-item-bg
+
+					&:after
+						display: none
+
+	.dropdown
+		position: inherit !important
+		margin: 0 !important
+		float: left
+		top: auto !important
+		right: auto !important
+		bottom: auto !important
+		left: auto !important
+		width: 100% !important
+		color: $mob-color
+
+		a
+			margin: 0
+			position: inherit
+			line-height: $mob-dropdown-item-height !important
+			background-color: $mob-dropdown-bg !important
+			color: $mob-dropdown-item-color !important
+			
+			&:after, 
+			&:before
+				display: none !important
+
+		a:hover,
+		a:focus
+			background-color: $mob-dropdown-bg-hover !important
+			color: $mob-dropdown-color-hover !important
+
+	.dropdown:hover > li > a, 
+	.dropdown:focus > li > a, 
+	.dropdown > li > a:focus, 
+	.dropdown > li > a:hover, 
+	a:hover + .dropdown > li > a, 
+	a:focus + .dropdown > li > a
+		max-height: $mob-dropdown-item-height
+		height: $mob-dropdown-item-height
+
+	#menuBar
+		position: absolute
+		top: 0
+		width: 100%
+		height: $mob-nav-height
+		display: block
+		background-color: $mob-bg
+		z-index: 1
+
+		a
+			height: $mob-nav-height
+			margin: 0 auto
+			display: table
+			float: none !important
+
+			img,
+			object,
+				float: left
+				height: $mob-nav-height / 100 * 70
+				margin: $mob-nav-height / 100 * 10 0 0 0
+
+	#menuToggle,
+	#menuToggle:hover,
+	#menuToggle:focus
+		cursor: pointer
+		width: $mob-menu-toggle-width
+		height: $mob-menu-toggle-height
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		left: $mob-nav-height - ($mob-menu-bar-height * 6) - ($mob-menu-bar-height * 2)
+		margin: auto
+		@include no-select
+
+	@if $mob-layer == true
+		#menuLayer
+			position: fixed
+			top: 0
+			left: -100%
+			height: 100%
+			width: 100%
+			background-color: $mob-layer-color
+			z-index: 10
+			opacity: 0
+			webkit-transition: 	opacity $transition-mob-time $transition-mob-function
+			-moz-transition: 	opacity $transition-mob-time $transition-mob-function
+			-ms-transition: 	opacity $transition-mob-time $transition-mob-function
+			-o-transition: 		opacity $transition-mob-time $transition-mob-function
+			transition: 		opacity $transition-mob-time $transition-mob-function
+
+
+	.menu-bars
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto
+		height: $mob-menu-bar-height * 5
+		width: 100%
+
+
+	.menu-bar
+		position: absolute
+		height: $mob-menu-bar-height
+		width: 100%
+		float: left
+		background-color: $mob-menu-bar-color
+		@extend %transition-mob
+		@if $mob-menu-bar-radius == true
+			border-radius: $mob-menu-bar-height / 2
+
+		&:nth-child(1)
+			top: 0
+
+		&:nth-child(2)
+			top: 0
+			bottom: 0
+			margin: auto
+
+		&:nth-child(3)
+			bottom: 0
+
+	#menuControl:checked ~ #menu > ul
+		@include transform(translateY($mob-nav-height))
+
+	@if $mob-layer == true
+		#menuControl:checked + #menuLayer
+			opacity: .5
+			left: 0
+
+	.hidden-mobile,
+	.hidden-mobile *
+		display: none !important
+
+	.visible-mobile
+		display: block !important
+
+@media screen and (max-width: $breakpoint)
+	+mobile()

@@ -1,0 +1,124 @@
+// Name:            Dotnav
+// Description:     Defines styles for a dot navigation
+//
+// Component:       `uk-dotnav`
+//
+// Modifier:        `uk-dotnav-contrast`
+//                  `uk-dotnav-vertical`
+//
+// States:          `uk-active`
+//
+// Markup:
+//
+// <!-- uk-dotnav -->
+// <ul class="uk-dotnav">
+//     <li class="uk-active"><a href=""></a></li>
+//     <li><a href=""></a></li>
+// </ul>
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$dotnav-margin-horizontal:                       7px !default
+// $dotnav-margin-vertical:                         $dotnav-margin-horizontal !default
+$dotnav-margin-vertical:                         17px !default
+
+// $dotnav-width:                                   20px !default
+$dotnav-width:                                   18px !default
+$dotnav-height:                                  $dotnav-width !default
+$dotnav-background:                              #b2b2b2 !default
+
+$dotnav-hover-background:                        #8e8a8a !default
+
+// $dotnav-onclick-background:                      rgba(50,50,50,0.6) !default
+$dotnav-onclick-background:                      #8e8a8a !default
+
+// $dotnav-active-background:                       rgba(50,50,50,0.4) !default
+$dotnav-active-background:                       #ee433e !default
+
+$dotnav-contrast-background:                     rgba(255,255,255,0.4) !default
+$dotnav-contrast-hover-background:               rgba(255,255,255,0.7) !default
+$dotnav-contrast-onclick-background:             rgba(255,255,255,0.9) !default
+$dotnav-contrast-active-background:              rgba(255,255,255,0.9) !default
+
+
+.uk-dotnav 
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -ms-flex-wrap: wrap
+    -webkit-flex-wrap: wrap
+    flex-wrap: wrap
+    margin-left: -$dotnav-margin-horizontal
+    margin-top: -$dotnav-margin-vertical
+    padding: 0
+    list-style: none
+
+.uk-dotnav > * 
+    -ms-flex: none
+    -webkit-flex: none
+    flex: none
+    padding-left: $dotnav-margin-horizontal
+    margin-top: $dotnav-margin-vertical
+
+.uk-dotnav:before,
+.uk-dotnav:after 
+    content: ""
+    display: block
+    overflow: hidden
+
+.uk-dotnav:after  
+    clear: both 
+
+.uk-dotnav > *  
+    float: left 
+
+
+.uk-dotnav > * > * 
+    display: block
+    box-sizing: content-box
+    width: $dotnav-width
+    height: $dotnav-height
+    border-radius: 50%
+    background: $dotnav-background
+    text-indent: 100%
+    overflow: hidden
+    white-space: nowrap
+    cursor: pointer
+
+
+.uk-dotnav > * > :hover,
+.uk-dotnav > * > :focus
+    background: $dotnav-hover-background
+    outline: none
+
+.uk-dotnav > * > :active 
+    background: $dotnav-onclick-background
+
+
+.uk-dotnav > .uk-active > * 
+    background: $dotnav-active-background
+
+.uk-dotnav-contrast > * > * 
+    background: $dotnav-contrast-background
+
+.uk-dotnav-contrast > * > :hover,
+.uk-dotnav-contrast > * > :focus
+    background: $dotnav-contrast-hover-background
+
+.uk-dotnav-contrast > * > :active 
+    background: $dotnav-contrast-onclick-background
+
+.uk-dotnav-contrast > .uk-active > * 
+    background: $dotnav-contrast-active-background
+
+.uk-dotnav-vertical 
+    -ms-flex-direction: column
+    -webkit-flex-direction: column
+    flex-direction: column
+
+.uk-dotnav-vertical > *  
+    float: none

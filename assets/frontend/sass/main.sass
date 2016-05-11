@@ -1,0 +1,45 @@
+// 
+	- Importar somente o que será usado, a fim de carregar somente código que será de utilidade
+	- Desativei alguns módulos do core do UIkit por que não uso eles, caso algum componente não funcione
+	  corretamente, olhar se não falta algum arquivo da pasta core
+@import 'uikit/uikit.sass'
+
+// 
+	UIkit Modules:
+		- Slider
+			@import 'uikit/components/slider.sass'
+
+		- Slideshow sem Dotnav
+			@import 'uikit/components/slideshow.sass'
+			@import 'uikit/components/slidenav.sass'
+
+		- Slideshow com Dotnav
+			@import 'uikit/components/slideshow.sass'
+			@import 'uikit/components/slidenav.sass'
+			@import 'uikit/components/dotnav.sass'
+
+		- Slideset
+			@import 'uikit/components/slidenav.sass'
+
+		- Slideset com Dotnav
+			@import 'uikit/components/slidenav.sass'
+			@import 'uikit/components/dotnav.sass'
+
+		- Lightbox 
+			Nenhum CSS requerido, somente javascript
+		
+		- Lightbox com Groups
+			@import 'uikit/components/slidenav.sass'
+
+		- Modal
+			@import 'uikit/core/modal.sass'
+
+//{{LAYOUT}}
+@import 'modules/normalize.sass'
+@import 'modules/font-awesome.sass'
+@import 'modules/utility.sass'
+@import 'modules/grid.sass'
+@import 'modules/font-icons.sass'
+@import 'modules/default.sass'
+@import 'modules/medias.sass'
+@import 'modules/nav'

@@ -1,0 +1,95 @@
+// Name:            Off-canvas
+// Description:     Defines styles for an off-canvas sidebar that slides in and out of the page
+//
+// Component:       `uk-offcanvas`
+//
+// Sub-objects:     `uk-offcanvas-page`
+//                  `uk-offcanvas-bar`
+//                  `uk-offcanvas-close`
+//
+// Modifiers:       `uk-offcanvas-bar-flip`
+//
+// States:          `uk-active`
+//
+// Uses:            Panel: `uk-panel`
+//
+// Markup:
+//
+// <!-- uk-offcanvas -->
+// <a href="#offcanvas" data-uk-offcanvas>Open</a>
+// <div id="offcanvas" class="uk-offcanvas">
+//     <div class="uk-offcanvas-bar"></div>
+// </div>
+//
+// ========================================================================
+
+$offcanvas-z-index:                              1000 !default
+$offcanvas-background:                           rgba(0,0,0,0.1) !default
+
+$offcanvas-bar-width:                            270px !default
+$offcanvas-bar-background:                       #333 !default
+
+$offcanvas-panel-margin:                         20px 15px !default
+$offcanvas-panel-color:                          #777 !default
+$offcanvas-panel-link-color:                     #ccc !default
+$offcanvas-panel-link-hover-color:               #fff !default
+$offcanvas-panel-title-color:                    $offcanvas-panel-link-color !default
+
+.uk-offcanvas 
+    display: none
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: $offcanvas-z-index
+    touch-action: none
+    background: $offcanvas-background
+
+.uk-offcanvas.uk-active  
+    display: block 
+
+.uk-offcanvas-page 
+    position: fixed
+    -webkit-transition: margin-left 0.3s ease-in-out
+    transition: margin-left 0.3s ease-in-out
+
+.uk-offcanvas-bar 
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    -webkit-transform: translateX(-100%)
+    transform: translateX(-100%)
+    z-index: $offcanvas-z-index + 1
+    width: $offcanvas-bar-width
+    max-width: 100%
+    background: $offcanvas-bar-background
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    -webkit-transition: -webkit-transform 0.3s ease-in-out
+    transition: transform 0.3s ease-in-out
+    -ms-scroll-chaining: none
+
+.uk-offcanvas.uk-active .uk-offcanvas-bar.uk-offcanvas-bar-show 
+    -webkit-transform: translateX(0%)
+    transform: translateX(0%)
+
+.uk-offcanvas-bar-flip 
+    left: auto
+    right: 0
+    -webkit-transform: translateX(100%)
+    transform: translateX(100%)
+
+.uk-offcanvas .uk-panel 
+    margin: $offcanvas-panel-margin
+    color: $offcanvas-panel-color
+
+.uk-offcanvas .uk-panel-title  
+    color: $offcanvas-panel-title-color 
+
+.uk-offcanvas .uk-panel a:not([class])  
+    color: $offcanvas-panel-link-color 
+
+.uk-offcanvas .uk-panel a:not([class]):hover  
+    color: $offcanvas-panel-link-hover-color 

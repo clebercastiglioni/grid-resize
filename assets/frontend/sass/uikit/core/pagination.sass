@@ -1,0 +1,112 @@
+// Name:            Pagination
+// Description:     Defines styles for a navigation between pages
+//
+// Component:       `uk-pagination`
+//
+// Sub-objects:     `uk-pagination-previous`
+//                  `uk-pagination-next`
+//
+// Modifiers:       `uk-pagination-left`
+//                  `uk-pagination-right`
+//
+// States:          `uk-active`
+//                  `uk-disabled`
+//
+// Markup:
+//
+// <!-- uk-pagination -->
+// <ul class="uk-pagination">
+//     <li class="uk-active"><span></span></li>
+//     <li><a href=""></a></li>
+// </ul>
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$pagination-font-size:                           1rem !default
+$pagination-margin-left:                         5px !default
+$pagination-padding-vertical:                    3px !default
+$pagination-padding-horizontal:                  5px !default
+$pagination-line-height:                         20px !default
+$pagination-background:                          #eee !default
+$pagination-color:                               #444 !default
+$pagination-hover-background:                    #f5f5f5 !default
+$pagination-hover-color:                         #444 !default
+$pagination-onclick-background:                  #ddd !default
+$pagination-onclick-color:                       #444 !default
+
+$pagination-active-background:                   #00a8e6 !default
+$pagination-active-color:                        #fff !default
+
+$pagination-disabled-background:                 #f5f5f5 !default
+$pagination-disabled-color:                      #999 !default
+
+
+.uk-pagination 
+    padding: 0
+    list-style: none
+    text-align: center
+    font-size: 0.001px
+
+.uk-pagination:before,
+.uk-pagination:after 
+    content: ""
+    display: table
+
+.uk-pagination:after  
+    clear: both 
+
+.uk-pagination > li 
+    display: inline-block
+    font-size: $pagination-font-size
+    vertical-align: top
+
+.uk-pagination > li:nth-child(n+2)  
+    margin-left: $pagination-margin-left 
+
+.uk-pagination > li > a,
+.uk-pagination > li > span 
+    display: inline-block
+    min-width: $pagination-line-height + (2 * $pagination-padding-vertical) - (2 * $pagination-padding-horizontal)
+    padding: $pagination-padding-vertical $pagination-padding-horizontal
+    line-height: $pagination-line-height
+    text-decoration: none
+    box-sizing: content-box
+    text-align: center
+
+.uk-pagination > li > a 
+    background: $pagination-background
+    color: $pagination-color
+
+.uk-pagination > li > a:hover,
+.uk-pagination > li > a:focus 
+    background-color: $pagination-hover-background
+    color: $pagination-hover-color
+    outline: none
+
+.uk-pagination > li > a:active 
+    background-color: $pagination-onclick-background
+    color: $pagination-onclick-color
+
+.uk-pagination > .uk-active > span 
+    background: $pagination-active-background
+    color: $pagination-active-color
+
+.uk-pagination > .uk-disabled > span 
+    background-color: $pagination-disabled-background
+    color: $pagination-disabled-color
+
+.uk-pagination-previous  
+    float: left 
+
+.uk-pagination-next  
+    float: right 
+
+.uk-pagination-left  
+    text-align: left 
+
+.uk-pagination-right  
+    text-align: right 

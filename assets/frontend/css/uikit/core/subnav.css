@@ -1,0 +1,73 @@
+.uk-subnav {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-top: -10px;
+	padding: 0;
+	list-style: none; }
+
+.uk-subnav > * {
+	-ms-flex: none;
+	-webkit-flex: none;
+	flex: none;
+	padding-left: 10px;
+	margin-top: 10px;
+	position: relative; }
+
+.uk-subnav:before,
+.uk-subnav:after {
+	content: "";
+	display: block;
+	overflow: hidden; }
+
+.uk-subnav:after {
+	clear: both; }
+
+.uk-subnav > * {
+	float: left; }
+
+.uk-subnav > * > * {
+	display: inline-block;
+	color: #444; }
+
+.uk-subnav > * > :hover,
+.uk-subnav > * > :focus {
+	color: #07D;
+	text-decoration: none; }
+
+.uk-subnav > .uk-active > * {
+	color: #07D; }
+
+.uk-subnav-line > :before {
+	content: "";
+	display: inline-block;
+	height: 10px;
+	vertical-align: middle; }
+
+.uk-subnav-line > :nth-child(n+2):before {
+	margin-right: 10px;
+	border-left: 1px solid #ddd; }
+
+.uk-subnav-pill > * > * {
+	padding: 3px 9px; }
+
+.uk-subnav-pill > * > :hover,
+.uk-subnav-pill > * > :focus {
+	background: #eee;
+	color: #444;
+	text-decoration: none;
+	outline: none; }
+
+.uk-subnav-pill > .uk-active > * {
+	background: #00a8e6;
+	color: #fff; }
+
+.uk-subnav > .uk-disabled > * {
+	background: none;
+	color: #999;
+	text-decoration: none;
+	cursor: text; }

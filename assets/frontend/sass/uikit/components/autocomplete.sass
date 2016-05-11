@@ -1,0 +1,31 @@
+// Variables
+// ========================================================================
+
+// Nav modifier
+$nav-autocomplete-color:                         #444 !default
+$nav-autocomplete-active-background:             #00a8e6 !default
+$nav-autocomplete-active-color:                  #fff !default
+$nav-autocomplete-header-color:                  #999 !default
+$nav-autocomplete-divider-border:                #ddd !default
+$nav-autocomplete-divider-border-width:          1px !default
+
+.uk-autocomplete
+    display: inline-block
+    position: relative
+    max-width: 100%
+    vertical-align: middle
+
+
+.uk-nav-autocomplete > li > a
+    color: $nav-autocomplete-color
+
+.uk-nav-autocomplete > li.uk-active > a 
+    background: $nav-autocomplete-active-background
+    color: $nav-autocomplete-active-color
+    outline: none
+
+.uk-nav-autocomplete .uk-nav-header 
+    color: $nav-autocomplete-header-color
+
+.uk-nav-autocomplete .uk-nav-divider 
+    border-top: $nav-autocomplete-divider-border-width solid $nav-autocomplete-divider-border

@@ -1,0 +1,21 @@
+.uk-breadcrumb {
+	padding: 0;
+	list-style: none;
+	font-size: 0.001px; }
+
+.uk-breadcrumb > li {
+	font-size: 1rem;
+	vertical-align: top; }
+
+.uk-breadcrumb > li,
+.uk-breadcrumb > li > a,
+.uk-breadcrumb > li > span {
+	display: inline-block; }
+
+.uk-breadcrumb > li:nth-child(n+2):before {
+	content: "/";
+	display: inline-block;
+	margin: 0 8px; }
+
+.uk-breadcrumb > li:not(.uk-active) > span {
+	color: #999; }

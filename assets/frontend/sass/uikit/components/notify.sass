@@ -1,0 +1,108 @@
+// Name:            Notify
+// Description:     Defines styles for toggleable notifications
+//
+// Component:       `uk-notify`
+//
+// Sub-objects:     `uk-notify-message`
+//
+// Modifiers:       `uk-notify-top-center`
+//                  `uk-notify-top-right`
+//                  `uk-notify-bottom-left`
+//                  `uk-notify-bottom-center`
+//                  `uk-notify-bottom-right`
+//                  `uk-notify-message-primary`
+//                  `uk-notify-message-success`
+//                  `uk-notify-message-warning`
+//                  `uk-notify-message-danger`
+//
+// Uses:            Close: `uk-close`
+//
+// ========================================================================
+
+$notify-position:                                10px !default
+$notify-z-index:                                 1040 !default
+$notify-width:                                   350px !default
+
+$notify-message-margin-bottom:                   10px !default
+$notify-message-padding:                         15px !default
+$notify-message-background:                      #444 !default
+$notify-message-color:                           #fff !default
+$notify-message-font-size:                       16px !default
+$notify-message-line-height:                     22px !default
+
+$notify-message-primary-background:              #ebf7fd !default
+$notify-message-primary-color:                   #2d7091 !default
+
+$notify-message-success-background:              #f2fae3 !default
+$notify-message-success-color:                   #659f13 !default
+
+$notify-message-warning-background:              #fffceb !default
+$notify-message-warning-color:                   #e28327 !default
+
+$notify-message-danger-background:               #fff1f0 !default
+$notify-message-danger-color:                    #d85030 !default
+
+.uk-notify 
+    position: fixed
+    top: $notify-position
+    left: $notify-position
+    z-index: $notify-z-index
+    box-sizing: border-box
+    width: $notify-width
+
+.uk-notify-top-right,
+.uk-notify-bottom-right  
+    left: auto
+    right: $notify-position
+
+.uk-notify-top-center,
+.uk-notify-bottom-center 
+    left: 50%
+    margin-left: ($notify-width / -2)
+
+.uk-notify-bottom-left,
+.uk-notify-bottom-right,
+.uk-notify-bottom-center 
+    top: auto
+    bottom: $notify-position
+
+@media (max-width: 479px) 
+    .uk-notify 
+        left: 10px
+        right: 10px
+        width: auto
+        margin: 0
+
+.uk-notify-message 
+    position: relative
+    margin-bottom: $notify-message-margin-bottom
+    padding: $notify-message-padding
+    background: $notify-message-background
+    color: $notify-message-color
+    font-size: $notify-message-font-size
+    line-height: $notify-message-line-height
+    cursor: pointer
+
+.uk-notify-message > .uk-close 
+    visibility: hidden
+    float: right
+
+.uk-notify-message:hover > .uk-close    
+    visibility: visible 
+
+
+.uk-notify-message-primary 
+    background: $notify-message-primary-background
+    color: $notify-message-primary-color
+
+.uk-notify-message-success 
+    background: $notify-message-success-background
+    color: $notify-message-success-color
+
+.uk-notify-message-warning 
+    background: $notify-message-warning-background
+    color: $notify-message-warning-color
+
+.uk-notify-message-danger 
+    background: $notify-message-danger-background
+    color: $notify-message-danger-color

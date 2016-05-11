@@ -1,0 +1,131 @@
+// {{BOX MODEL}}
+*, *:before, *:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+// {{CLEARFIX}}
+.clearfix, .clearfix:after
+  clear: both
+
+// {{RESETS}}  
+html, body
+  float: none !important
+  margin: 0
+  padding: 0
+
+a, a:hover, a:focus
+  text-decoration: none !important
+  
+input, textarea, select, button
+  outline: 0
+  
+textarea
+  resize: none
+
+.uk-close
+  position: absolute
+  top: -14px
+  right: -14px
+  margin: 0 !important
+
+.uk-modal-dialog
+  max-width: 85%  
+
+// {{RESPONSIVE IMAGES}}  
+img
+  max-width: 100%
+  height: auto
+  
+// {{DISPLAY}}  
+.dspiblock
+  display: inline-block
+
+.dspblock
+  display: block
+
+.dsptable
+  display: table !important
+  
+.dsptcell
+  display: table-cell !important
+  float: none !important
+  vertical-align: middle !important
+
+// {{FLOAT}}
+.left
+  float: left !important
+  
+.right
+  float: right !important
+  
+// {{TEXT ALIGN}}  
+.text-left
+  text-align: left
+  
+.text-right
+  text-align: right
+  
+.text-center
+  text-align: center
+
+.text-justify
+  text-align: justify
+
+// {{MISC}}  
+.row
+  max-width: 1200px
+  width: 100%
+  margin: 0 auto
+  padding: 0 16px
+  
+  &:before, 
+  &:after
+    content: ' '
+    display: table
+    
+.row-no-margin
+  margin: 0 auto
+  padding: 0px
+  width: 100%
+  max-width: 1920px
+  display: table
+
+.centered
+  display: table
+  margin: 0 auto
+  float: none
+
+.upper
+  text-transform: uppercase
+
+@for $i from 0 through 10
+  .mtop#{$i * 10}
+    margin-top: $i * 10px
+
+  .mbot#{$i * 10}
+    margin-bottom: $i * 10px
+
+  .mleft#{$i * 10}
+    margin-left: $i * 10px
+
+  .mright#{$i * 10}
+    margin-right: $i * 10px
+
+  .pdtop#{$i * 10}
+    padding-top: $i * 10px
+
+  .pdbot#{$i * 10}
+    padding-bottom: $i * 10px
+
+  .pdleft#{$i * 10}
+    padding-left: $i * 10px
+
+  .pdright#{$i * 10}
+    padding-right: $i * 10px
+
+// {{COMMON FONT SIZES}}
+$fsize: 11 14 16 18 22 24
+@each $f in $fsize
+  .fsize#{$f}
+    font-size: #{$f}px

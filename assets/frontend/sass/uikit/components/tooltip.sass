@@ -1,0 +1,86 @@
+$tooltip-z-index:                                1030 !default
+$tooltip-max-width:                              200px !default
+$tooltip-padding-vertical:                       5px !default
+$tooltip-padding-horizontal:                     8px !default
+$tooltip-background:                             #333 !default
+$tooltip-triangle-size:                          5px !default
+
+$tooltip-color:                                  rgba(255,255,255,0.7) !default
+$tooltip-font-size:                              12px !default
+$tooltip-line-height:                            18px !default
+
+$tooltip-offset-horizontal:                      10px !default
+
+.uk-tooltip 
+    display: none
+    position: absolute
+    z-index: $tooltip-z-index
+    box-sizing: border-box
+    max-width: $tooltip-max-width
+    padding: $tooltip-padding-vertical $tooltip-padding-horizontal
+    background: $tooltip-background
+    color: $tooltip-color
+    font-size: $tooltip-font-size
+    line-height: $tooltip-line-height
+
+
+.uk-tooltip:after 
+    content: ""
+    display: block
+    position: absolute
+    width: 0
+    height: 0
+    border: $tooltip-triangle-size dashed $tooltip-background
+
+.uk-tooltip-top:after,
+.uk-tooltip-top-left:after,
+.uk-tooltip-top-right:after 
+    bottom: -$tooltip-triangle-size
+    border-top-style: solid
+    border-bottom: none
+    border-left-color: transparent
+    border-right-color: transparent
+    border-top-color: $tooltip-background
+
+.uk-tooltip-bottom:after,
+.uk-tooltip-bottom-left:after,
+.uk-tooltip-bottom-right:after 
+    top: -$tooltip-triangle-size
+    border-bottom-style: solid
+    border-top: none
+    border-left-color: transparent
+    border-right-color: transparent
+    border-bottom-color: $tooltip-background
+
+.uk-tooltip-top:after,
+.uk-tooltip-bottom:after 
+    left: 50%
+    margin-left: -$tooltip-triangle-size
+
+.uk-tooltip-top-left:after,
+.uk-tooltip-bottom-left:after  
+    left: $tooltip-offset-horizontal 
+
+.uk-tooltip-top-right:after,
+.uk-tooltip-bottom-right:after  
+    right: $tooltip-offset-horizontal 
+
+.uk-tooltip-left:after 
+    right: -$tooltip-triangle-size
+    top: 50%
+    margin-top: -$tooltip-triangle-size
+    border-left-style: solid
+    border-right: none
+    border-top-color: transparent
+    border-bottom-color: transparent
+    border-left-color: $tooltip-background
+
+.uk-tooltip-right:after 
+    left: -$tooltip-triangle-size
+    top: 50%
+    margin-top: -$tooltip-triangle-size
+    border-right-style: solid
+    border-left: none
+    border-top-color: transparent
+    border-bottom-color: transparent
+    border-right-color: $tooltip-background

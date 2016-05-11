@@ -1,0 +1,72 @@
+// Name:            Thumbnav
+// Description:     Defines styles for a thumbnail navigation
+//
+// Component:       `uk-thumbnav`
+//
+// States:          `uk-active`
+//
+// Markup:
+//
+// <!-- uk-thumbnav -->
+// <ul class="uk-thumbnav">
+//     <li class="uk-active"><a href=""></a></li>
+//     <li><a href=""></a></li>
+// </ul>
+//
+// ========================================================================
+
+$thumbnav-margin-horizontal:                     10px !default
+$thumbnav-margin-vertical:                       $thumbnav-margin-horizontal !default
+
+$thumbnav-background:                            #fff !default
+
+$thumbnav-opacity:                               0.7 !default
+$thumbnav-hover-opacity:                         1 !default
+$thumbnav-active-opacity:                        1 !default
+
+.uk-thumbnav 
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -ms-flex-wrap: wrap
+    -webkit-flex-wrap: wrap
+    flex-wrap: wrap
+    margin-left: -$thumbnav-margin-horizontal
+    margin-top: -$thumbnav-margin-vertical
+    padding: 0
+    list-style: none
+
+.uk-thumbnav > * 
+    -ms-flex: none
+    -webkit-flex: none
+    flex: none
+    padding-left: $thumbnav-margin-horizontal
+    margin-top: $thumbnav-margin-vertical
+
+.uk-thumbnav:before,
+.uk-thumbnav:after 
+    content: ""
+    display: block
+    overflow: hidden
+
+.uk-thumbnav:after  
+    clear: both 
+
+.uk-thumbnav > *  
+    float: left 
+
+.uk-thumbnav > * > * 
+    display: block
+    background: $thumbnav-background
+
+.uk-thumbnav > * > * > img 
+    opacity: $thumbnav-opacity
+    -webkit-transition: opacity 0.15s linear
+    transition: opacity 0.15s linear
+
+.uk-thumbnav > * > :hover > img,
+.uk-thumbnav > * > :focus > img  
+    opacity: $thumbnav-hover-opacity 
+
+.uk-thumbnav > .uk-active > * > img  
+    opacity: $thumbnav-active-opacity 

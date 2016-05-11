@@ -1,0 +1,57 @@
+// Name:            Accordion
+// Description:     Defines styles for the accordion
+//
+// Component:       `uk-accordion`
+//
+// Sub-objects:     `uk-accordion-title`
+//                  `uk-accordion-content`
+//
+// Markup:
+//
+// <!-- uk-accordion -->
+// <div class="uk-accordion" data-uk-accordion>
+//     <h3 class="uk-accordion-title"></h3>
+//     <div class="uk-accordion-content">
+//         <p></p>
+//     </div>
+// </div>
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$accordion-title-margin-bottom:                  15px !default
+$accordion-title-padding-vertical:               5px !default
+$accordion-title-padding-horizontal:             15px !default
+$accordion-title-font-size:                      18px !default
+$accordion-title-line-height:                    24px !default
+$accordion-title-background:                     #eee !default
+
+$accordion-content-padding-horizontal:           $accordion-title-padding-horizontal !default
+$accordion-content-padding-bottom:               $accordion-title-padding-horizontal !default
+
+.uk-accordion-title
+    margin-top: 0
+    margin-bottom: $accordion-title-margin-bottom
+    padding: $accordion-title-padding-vertical $accordion-title-padding-horizontal
+    background: $accordion-title-background
+    font-size: $accordion-title-font-size
+    line-height: $accordion-title-line-height
+    cursor: pointer
+
+.uk-accordion-content   
+    padding: 0 $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal
+
+.uk-accordion-content:before,
+.uk-accordion-content:after 
+    content: ""
+    display: table
+
+.uk-accordion-content:after
+    clear: both
+
+
+.uk-accordion-content > :last-child
+    margin-bottom: 0

@@ -1,0 +1,4 @@
+assets/files/**/thumbs/*
+assets/frontend/js/node_modules/
+assets/frontend/.sass-cache
+assets/frontend/*img*/**/*_tmp*
